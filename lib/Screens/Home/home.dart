@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                     setState(() {
                       logOutLoader = false;
                     });
-                    Get.off(Wrapper());
+                    Get.to(Wrapper());
                   },
                   child: Container(
                     decoration: BoxDecoration(

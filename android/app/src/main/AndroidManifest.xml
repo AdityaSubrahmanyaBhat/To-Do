@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.supabase_auth">
+   <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="supabase_auth"
         android:icon="@mipmap/ic_launcher">
