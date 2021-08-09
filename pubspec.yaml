@@ -1,4 +1,4 @@
-name: supabase_auth
+name: Tasks
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -24,6 +24,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_screenutil: ^5.0.0+2
   form_field_validator: ^1.1.0
   get: ^4.3.0
   get_storage: ^2.0.3

@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:supabase/supabase.dart';
-import 'package:supabase_auth/Screens/Auth/registerPage.dart';
-import 'package:supabase_auth/Screens/Home/home.dart';
+import 'package:Tasks/Screens/Auth/registerPage.dart';
+import 'package:Tasks/Screens/Home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:supabase_auth/Services/AuthService/authService.dart';
+import 'package:Tasks/Services/AuthService/authService.dart';
 
 class LoginPage extends StatefulWidget {
   String email = '';
@@ -32,22 +34,24 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 100.0),
+                padding: EdgeInsets.only(
+                  top: ScreenUtil().setHeight(100.0),
+                ),
                 child: Center(
                   child: Text(
                     'LOGIN',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 50,
+                      fontSize: ScreenUtil().setSp(100.0),
                     ),
                   ),
                 ),
               ),
               Container(
                 margin: EdgeInsets.only(
-                  top: size.height / 6,
-                  left: 40.0,
-                  right: 40.0,
+                  top: size.height / 8,
+                  left: ScreenUtil().setWidth(80.0),
+                  right: ScreenUtil().setWidth(80.0),
                 ),
                 decoration: BoxDecoration(
                   color: Colors.grey[900],
@@ -55,9 +59,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: 20.0,
-                    left: 20.0,
-                    right: 20.0,
+                    top: ScreenUtil().setHeight(10.0),
+                    left: ScreenUtil().setWidth(40.0),
+                    right: ScreenUtil().setWidth(40.0),
                   ),
                   child: Form(
                     key: _formKey,
@@ -66,6 +70,10 @@ class _LoginPageState extends State<LoginPage> {
                         TextFormField(
                           controller: _emailController,
                           decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.email,
+                              color: Colors.white,
+                            ),
                             filled: true,
                             fillColor: Colors.grey[600],
                             hintText: "Email",
@@ -85,12 +93,16 @@ class _LoginPageState extends State<LoginPage> {
                           ]),
                         ),
                         SizedBox(
-                          height: 20.0,
+                          height: ScreenUtil().setHeight(15.0),
                         ),
                         TextFormField(
                           obscureText: obscure,
                           controller: _passwordController,
                           decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.edit_attributes,
+                              color: Colors.white,
+                            ),
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
@@ -124,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                           ]),
                         ),
                         SizedBox(
-                          height: 20.0,
+                          height: ScreenUtil().setHeight(15.0),
                         ),
                         logging == false
                             ? ElevatedButton(
@@ -159,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                                     AlwaysStoppedAnimation<Color>(Colors.green),
                               ),
                         SizedBox(
-                          height: 20.0,
+                          height: ScreenUtil().setHeight(15.0),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -186,11 +198,16 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 20.0),
+                        SizedBox(
+                          height: ScreenUtil().setHeight(15.0),
+                        ),
                       ],
                     ),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: ScreenUtil().setHeight(40.0),
               ),
             ],
           ),
@@ -234,7 +251,7 @@ SnackBar snackBar({String content, String type}) => SnackBar(
         content,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 20.0,
+          fontSize: 40.0.sp,
         ),
       ),
       backgroundColor: type == "Error" ? Colors.red : Colors.green,

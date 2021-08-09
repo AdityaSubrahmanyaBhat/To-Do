@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.supabase_auth">
+    package="com.example.Tasks">
    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="supabase_auth"
+        android:label="Tasks"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
